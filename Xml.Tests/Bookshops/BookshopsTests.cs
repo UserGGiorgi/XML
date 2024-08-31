@@ -201,7 +201,7 @@ public class BookshopsTests : XmlTestFixtureBase
         public string? Name { get; set; }
 
         [XmlAttribute("website")]
-        public string Website { get; set; }
+        public string? Website { get; set; }
 
         [XmlArray("books")]
         [XmlArrayItem("book")]
@@ -218,7 +218,7 @@ public class BookshopsTests : XmlTestFixtureBase
         public List<string> Authors { get; } = new List<string>();
 
         [XmlAttribute("title")]
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         [XmlArray("genres")]
         [XmlArrayItem("genre")]
@@ -229,7 +229,7 @@ public class BookshopsTests : XmlTestFixtureBase
         public List<string> Categories { get; } = new List<string>();
 
         [XmlElement("price")]
-        public BookPrice Price { get; set; }
+        public BookPrice? Price { get; set; }
 
         [XmlAttribute("language")]
         public string? Language { get; set; }
