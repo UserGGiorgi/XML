@@ -78,7 +78,7 @@ public class BookListExtendedTests : XmlTestFixtureBase
     public class BookList
     {
         [XmlElement("book")]
-        public List<Book> Books { get; } = new();
+        public List<Book> Books { get; } = [];
     }
 
     public class Book

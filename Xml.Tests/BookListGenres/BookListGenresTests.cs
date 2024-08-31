@@ -73,7 +73,7 @@ public class BookListGenresTests : XmlTestFixtureBase
     public class BookList
     {
         [XmlElement("book")]
-        public List<Book> Books { get; } = new();
+        public List<Book> Books { get; } = [];
     }
 
     public class Book
@@ -86,7 +86,7 @@ public class BookListGenresTests : XmlTestFixtureBase
 
         [XmlArray("genres")]
         [XmlArrayItem("genre")]
-        public List<string> Genres { get; } = new();
+        public List<string> Genres { get; } = [];
 
         [XmlElement("isbn")]
         public string Isbn { get; set; } = null!;

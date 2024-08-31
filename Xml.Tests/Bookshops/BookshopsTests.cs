@@ -1,5 +1,4 @@
 using System.Xml.Serialization;
-using Microsoft.Win32.SafeHandles;
 using NUnit.Framework;
 
 namespace Xml.Tests.Bookshops;
@@ -53,8 +52,8 @@ public class BookshopsTests : XmlTestFixtureBase
         Assert.That(book.Categories[0], Is.EqualTo("Action"));
         Assert.That(book.Categories[1], Is.EqualTo("Adventure"));
         Assert.That(book.Price, Is.Not.Null);
-        Assert.That(book.Price.Value, Is.EqualTo(11.13M));
-        Assert.That(book.Price.Currency, Is.EqualTo("USD"));
+        Assert.That(book.Price?.Value, Is.EqualTo(11.13M));
+        Assert.That(book.Price?.Currency, Is.EqualTo("USD"));
         Assert.That(book.Language, Is.EqualTo("English"));
 
         book = bookshop.Books[1];
@@ -73,8 +72,8 @@ public class BookshopsTests : XmlTestFixtureBase
         Assert.That(book.Categories[0], Is.EqualTo("Fantasy"));
         Assert.That(book.Categories[1], Is.EqualTo("Science and Religion"));
         Assert.That(book.Price, Is.Not.Null);
-        Assert.That(book.Price.Value, Is.EqualTo(39.39M));
-        Assert.That(book.Price.Currency, Is.EqualTo("USD"));
+        Assert.That(book.Price?.Value, Is.EqualTo(39.39M));
+        Assert.That(book.Price?.Currency, Is.EqualTo("USD"));
         Assert.That(book.Language, Is.EqualTo("English"));
 
         bookshop = bookshopList.Bookshops[1];
@@ -100,8 +99,8 @@ public class BookshopsTests : XmlTestFixtureBase
         Assert.That(book.Categories[0], Is.EqualTo("Fiction"));
         Assert.That(book.Categories[1], Is.EqualTo("Littérature d'aventure"));
         Assert.That(book.Price, Is.Not.Null);
-        Assert.That(book.Price.Value, Is.EqualTo(16M));
-        Assert.That(book.Price.Currency, Is.EqualTo("EUR"));
+        Assert.That(book.Price?.Value, Is.EqualTo(16M));
+        Assert.That(book.Price?.Currency, Is.EqualTo("EUR"));
         Assert.That(book.Language, Is.EqualTo("French"));
 
         book = bookshop.Books[1];
@@ -120,8 +119,8 @@ public class BookshopsTests : XmlTestFixtureBase
         Assert.That(book.Categories[1], Is.EqualTo("Littérature d'aventure"));
         Assert.That(book.Categories[2], Is.EqualTo("Détective"));
         Assert.That(book.Price, Is.Not.Null);
-        Assert.That(book.Price.Value, Is.EqualTo(36M));
-        Assert.That(book.Price.Currency, Is.EqualTo("EUR"));
+        Assert.That(book.Price?.Value, Is.EqualTo(36M));
+        Assert.That(book.Price?.Currency, Is.EqualTo("EUR"));
         Assert.That(book.Language, Is.EqualTo("French"));
 
         bookshop = bookshopList.Bookshops[2];
@@ -148,8 +147,8 @@ public class BookshopsTests : XmlTestFixtureBase
         Assert.That(book.Categories[1], Is.EqualTo("Классическая литература"));
         Assert.That(book.Categories[2], Is.EqualTo("Зарубежная литература"));
         Assert.That(book.Price, Is.Not.Null);
-        Assert.That(book.Price.Value, Is.EqualTo(34.68M));
-        Assert.That(book.Price.Currency, Is.EqualTo("BYN"));
+        Assert.That(book.Price?.Value, Is.EqualTo(34.68M));
+        Assert.That(book.Price?.Currency, Is.EqualTo("BYN"));
         Assert.That(book.Language, Is.EqualTo("Русский"));
 
         book = bookshop.Books[1];
@@ -168,8 +167,8 @@ public class BookshopsTests : XmlTestFixtureBase
         Assert.That(book.Categories[1], Is.EqualTo("Изучение иностранных языков"));
         Assert.That(book.Categories[2], Is.EqualTo("Адаптированные книги"));
         Assert.That(book.Price, Is.Not.Null);
-        Assert.That(book.Price.Value, Is.EqualTo(11.22M));
-        Assert.That(book.Price.Currency, Is.EqualTo("BYN"));
+        Assert.That(book.Price?.Value, Is.EqualTo(11.22M));
+        Assert.That(book.Price?.Currency, Is.EqualTo("BYN"));
         Assert.That(book.Language, Is.EqualTo("English"));
     }
 
@@ -189,7 +188,7 @@ public class BookshopsTests : XmlTestFixtureBase
     public class BookshopList
     {
         [XmlElement("bookshop")]
-        public List<Bookshop> Bookshops { get; } = new List<Bookshop>();
+        public List<Bookshop> Bookshops { get; } = [];
     }
 
     public class Bookshop
@@ -205,7 +204,7 @@ public class BookshopsTests : XmlTestFixtureBase
 
         [XmlArray("books")]
         [XmlArrayItem("book")]
-        public List<Book> Books { get; } = new List<Book>();
+        public List<Book> Books { get; } = [];
     }
 
     public class Book
@@ -215,18 +214,18 @@ public class BookshopsTests : XmlTestFixtureBase
 
         [XmlArray("authors")]
         [XmlArrayItem("author")]
-        public List<string> Authors { get; } = new List<string>();
+        public List<string> Authors { get; } = [];
 
         [XmlAttribute("title")]
         public string? Title { get; set; }
 
         [XmlArray("genres")]
         [XmlArrayItem("genre")]
-        public List<string> Genres { get; } = new List<string>();
+        public List<string> Genres { get; } = [];
 
         [XmlArray("categories")]
         [XmlArrayItem("category")]
-        public List<string> Categories { get; } = new List<string>();
+        public List<string> Categories { get; } = [];
 
         [XmlElement("price")]
         public BookPrice? Price { get; set; }

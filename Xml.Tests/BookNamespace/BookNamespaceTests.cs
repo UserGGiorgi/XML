@@ -1,6 +1,5 @@
 using System.Xml.Serialization;
 using NUnit.Framework;
-using static System.Net.WebRequestMethods;
 
 namespace Xml.Tests.BookNamespace;
 

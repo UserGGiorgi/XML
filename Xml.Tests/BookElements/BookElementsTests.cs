@@ -24,7 +24,7 @@ public class BookElementsTests : XmlTestFixtureBase
     {
         Book book = Deserialize<Book>(this.content);
 
-        Assert.That(book,Is.Not.Null);
+        Assert.That(book, Is.Not.Null);
         Assert.That("Pride And Prejudice", Is.EqualTo(book.Title));
         Assert.That(24.95, Is.EqualTo(book.Price));
         Assert.That("novel", Is.EqualTo(book.Genre));
