@@ -1,5 +1,6 @@
 using System.Xml.Serialization;
 using NUnit.Framework;
+using static System.Net.WebRequestMethods;
 
 namespace Xml.Tests.BookNamespace;
 
@@ -15,26 +16,27 @@ public class BookNamespaceTests : XmlTestFixtureBase
     [SetUp]
     public void SetUp()
     {
-            this.content = ReadContent(SourceFileName);
-            this.schema = ReadSchema(SchemaFileName);
-        }
+        this.content = ReadContent(SourceFileName);
+        this.schema = ReadSchema(SchemaFileName);
+    }
+
 
     [Test]
     public void DeserializeAndTestContent()
     {
-            Book book = Deserialize<Book>(this.content);
+        Book book = Deserialize<Book>(this.content);
 
-            Assert.That(book, Is.Not.Null);
-            Assert.That(book.Title, Is.EqualTo("Pride And Prejudice"));
-        }
+        Assert.That(book, Is.Not.Null);
+        Assert.That(book.Title, Is.EqualTo("Pride And Prejudice"));
+    }
 
     [Test]
     public void ValidateSchema()
     {
-            ValidateSchema(this.content, this.schema, TargetNamespaces.BookNamespace);
-        }
+        ValidateSchema(this.content, this.schema, TargetNamespaces.BookNamespace);
+    }
 
-    [XmlRoot("book", Namespace = TargetNamespaces.BookNamespace)]
+    [XmlRoot("book", Namespace = "http://www.contoso.com/book")]
     public class Book
     {
         [XmlElement("title")]

@@ -1,2 +1,106 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<co:bookshops xmlns:co="http://www.contoso.com/bookshops"/>
+<co:bookshops xmlns:co="http://www.contoso.com/book">
+    <co:bookshop id="1" name="Amazon" website="https://amazon.com">
+        <co:books>
+            <co:book id="1" title="The Three Musketeers" language="English">
+                <co:authors>
+                    <co:author>Alexandre Dumas</co:author>
+                </co:authors>
+                <co:genres>
+                    <co:genre>Historical novel</co:genre>
+                    <co:genre>Adventure novel</co:genre>
+                    <co:genre>Swashbuckler</co:genre>
+                </co:genres>
+                <co:categories>
+                    <co:category>Action</co:category>
+                    <co:category>Adventure</co:category>
+                </co:categories>
+                <co:price value="11.13" currency="USD"/>
+            </co:book>
+            <co:book id="2" title="The Illustrated Good Omens" language="English">
+                <co:authors>
+                    <co:author>Terry Pratchett</co:author>
+                    <co:author>Neil Gaiman</co:author>
+                </co:authors>
+                <co:genres>
+                    <co:genre>Fantasy novel</co:genre>
+                    <co:genre>Comedy novel</co:genre>
+                </co:genres>
+                <co:categories>
+                    <co:category>Fantasy</co:category>
+                    <co:category>Science and Religion</co:category>
+                </co:categories>
+                <co:price value="39.39" currency="USD"/>
+            </co:book>
+        </co:books>
+    </co:bookshop>
+    <co:bookshop id="2" name="1000 livres et vous" website="https://1000livresetvous.com/">
+        <co:books>
+            <co:book id="1" title="Les Trois Mousquetaires" language="French">
+                <co:authors>
+                    <co:author>Alexandre Dumas</co:author>
+                </co:authors>
+                <co:genres>
+                    <co:genre>Historical novel</co:genre>
+                    <co:genre>Adventure novel</co:genre>
+                    <co:genre>Swashbuckler</co:genre>
+                </co:genres>
+                <co:categories>
+                    <co:category>Fiction</co:category>
+                    <co:category>Littérature d'aventure</co:category>
+                </co:categories>
+                <co:price value="16" currency="EUR"/>
+            </co:book>
+            <co:book id="2" title="Une étude en rouge" language="French">
+                <co:authors>
+                    <co:author>Arthur Conan Doyle</co:author>
+                </co:authors>
+                <co:genres>
+                    <co:genre>Detective fiction</co:genre>
+                    <co:genre>Short stories</co:genre>
+                </co:genres>
+                <co:categories>
+                    <co:category>Fiction</co:category>
+                    <co:category>Littérature d'aventure</co:category>
+                    <co:category>Détective</co:category>
+                </co:categories>
+                <co:price value="36" currency="EUR"/>
+            </co:book>
+        </co:books>
+    </co:bookshop>
+    <co:bookshop id="3" name="Oz" website="https://oz.by">
+        <co:books>
+            <co:book id="2" title="Три мушкетера" language="Русский">
+                <co:authors>
+                    <co:author>Александр Дюма</co:author>
+                </co:authors>
+                <co:genres>
+                    <co:genre>Historical novel</co:genre>
+                    <co:genre>Adventure novel</co:genre>
+                    <co:genre>Swashbuckler</co:genre>
+                </co:genres>
+                <co:categories>
+                    <co:category>Художественная литература</co:category>
+                    <co:category>Классическая литература</co:category>
+                    <co:category>Зарубежная литература</co:category>
+                </co:categories>
+                <co:price value="34.68" currency="BYN"/>
+            </co:book>
+            <co:book id="1" title="The Adventures of Sherlock Holmes" language="English">
+                <co:authors>
+                    <co:author>Arthur Conan Doyle</co:author>
+                </co:authors>
+                <co:genres>
+                    <co:genre>Detective fiction</co:genre>
+                    <co:genre>Short stories</co:genre>
+                </co:genres>
+                <co:categories>
+                    <co:category>Нехудожественная литература</co:category>
+                    <co:category>Изучение иностранных языков</co:category>
+                    <co:category>Адаптированные книги</co:category>
+                </co:categories>
+                <co:price value="11.22" currency="BYN"/>
+            </co:book>
+        </co:books>
+    </co:bookshop>
+</co:bookshops>
